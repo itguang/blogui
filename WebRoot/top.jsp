@@ -19,12 +19,8 @@
 	src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
 <script
 	src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<!-- Custom styles for this template -->
-<link href="${pageContext.request.contextPath}/css/non-responsive.css"
-	rel="stylesheet">
 
-  <link href="${pageContext.request.contextPath}/css/non-responsive.css"
-	rel="stylesheet">
+	
 
 
 </head>
@@ -41,22 +37,7 @@
 			</div>
 			<div>
 
-				<ul class="nav navbar-nav">
-					<li class="active"><a data-toggle="tab" href="#home">首页</a></li>
-					<li><a data-toggle="tab" href="#blog">博客</a></li>
-
-					
-					
-					<li><a data-toggle="tab" href="#itsource">资源分享</a></li>
-					<li><a data-toggle="tab" href="#read">读书</a></li>
-					
-
-					<li><a data-toggle="tab" href="#menu5">问答</a></li>
-
-					<li><a data-toggle="tab" href="#menu6">赞助</a></li>
-
-
-				</ul>
+				
 				<form class="navbar-form navbar-left" role="search">
 					<div class="form-group">
 						<input type="text" class="form-control" />
