@@ -22,7 +22,6 @@
 <!-- 第三部分:把映射文件放到核心配置文件中去 -->
 <mapping resource="cn/itguang/entity/User.hbm.xml"/>
 <mapping resource="cn/itguang/entity/Article.hbm.xml"/>
-<mapping resource="cn/itguang/entity/Source.hbm.xml"/>
 
 </session-factory>
 	

@@ -6,11 +6,10 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.struts2.ServletActionContext;
 
-import com.opensymphony.xwork2.ActionSupport;
-
 import cn.itguang.entity.User;
-import cn.itguang.service.ArticleService;
 import cn.itguang.service.UserService;
+
+import com.opensymphony.xwork2.ActionSupport;
 
 public class UserAction extends ActionSupport {
 

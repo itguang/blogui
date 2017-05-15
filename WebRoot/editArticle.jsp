@@ -58,11 +58,11 @@ function submit()
 	   $.ajax({  
            cache: true,  
            type: "POST",  
-           url:"#",  
+           url:"article_add.html",  
            data:$('#myform').serialize(),// 你的formid  
            async: false,  
            error: function(request) {  
-               alert("Connection error:"+request.error);  //发表失败
+               //alert("Connection error:"+request.error);  //发表失败
            },  
            success: function(data) {  //发表成功
               
@@ -142,8 +142,8 @@ function submit()
   </div>
             </div>
             <div class="modal-footer">
-               <button type="button" class="btn btn-default" data-dismiss="modal" onclick="window.location.reload('/html/nextpage.html')">继续写文章</button> 
-               <button type="button" class="btn btn-primary" onclick="window.location.reload('/html/nextpage.html')">查看文章</button>
+               <button type="button" class="btn btn-default" data-dismiss="modal" onclick="window.location.reload('editArticle.jsp')">继续写文章</button> 
+               <button type="button" class="btn btn-primary" onclick="window.location.reload('article_add')">查看文章</button>
             </div>
           </div>
           

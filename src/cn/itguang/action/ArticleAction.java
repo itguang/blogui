@@ -1,5 +1,9 @@
 package cn.itguang.action;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.struts2.ServletActionContext;
+
 import cn.itguang.entity.Article;
 import cn.itguang.service.ArticleService;
 
@@ -22,5 +26,21 @@ public class ArticleAction extends ActionSupport implements
 
 		return article;
 	}
+	
+
+	//发表文章成功
+	@SuppressWarnings("all")
+	public String add(){
+		
+		
+		
+		return "addsuccess";
+	}
+	
+	
+	
+	
+	
+	
 
 }

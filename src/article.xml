@@ -17,7 +17,7 @@
 	<!-- 创建dao对象 -->
 	<bean id="articleDao" class="cn.itguang.dao.ArticleDaoImpl">
 	
-	<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+<property name="hibernateTemplate" ref="hibernateTemplate"></property>
 	</bean>
 
 	<!-- 创建service对象 -->
@@ -26,7 +26,7 @@
 		<property name="articleDao" ref="articleDao"></property>
 	</bean>
 	<!-- 配置action的对象 注意action对象scope为多实例 -->
-	<bean id="articleAction" class="cn.itguang.action.UserAction" scope="prototype">
+	<bean id="articleAction" class="cn.itguang.action.ArticleAction" scope="prototype">
 		<!-- 由于action中需要service参数,故需要注入service,注入之前先创建它们的对象 -->
 		<property name="articleService" ref="articleService"></property>
 	</bean>

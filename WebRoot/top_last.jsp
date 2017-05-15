@@ -43,23 +43,25 @@
 		<button type="submit" class="btn btn-default">搜索全站</button>
 	</form>
 	<ul class="nav navbar-nav navbar-right">
-<c:if test="${sessionScope.currentUser==null}">
-		<li><a href="login.jsp"><span
-				class="glyphicon glyphicon-user"></span>登陆</a></li>
-		<li><a href="regist.jsp"><span
-				class="glyphicon glyphicon-log-in">注册</a></li>
-</c:if>
-<c:if test="${sessionScope.currentUser!=null}">
-		<li class="dropdown"><a href="#" class="dropdown-toggle"
-			data-toggle="dropdown">个人中心<strong class="caret"></strong></a>
-			<ul class="dropdown-menu">
-				<li><a href="${pageContext.request.contextPath}/editArticle.jsp">发表博客</a></li>
-				<li><a href="#">分享资源</a></li>
-				<li><a href="#">个人信息</a></li>
-				<li class="divider"></li>
-				<li><a href="${pageContext.request.contextPath}/user_logout.action">注销登陆</a></li>
-				</c:if>
-			</ul>
-			
+		<c:if test="${sessionScope.currentUser==null}">
+			<li><a href="login.jsp"><span
+					class="glyphicon glyphicon-user"></span>登陆</a></li>
+			<li><a href="regist.jsp"><span
+					class="glyphicon glyphicon-log-in">注册</a></li>
+		</c:if>
+		<c:if test="${sessionScope.currentUser!=null}">
+			<li class="dropdown"><a href="#" class="dropdown-toggle"
+				data-toggle="dropdown">个人中心<strong class="caret"></strong></a>
+				<ul class="dropdown-menu">
+					<li><a
+						href="${pageContext.request.contextPath}/editArticle.jsp">发表博客</a></li>
+					<li><a href="#">分享资源</a></li>
+					<li><a href="#">个人信息</a></li>
+					<li class="divider"></li>
+					<li><a
+						href="${pageContext.request.contextPath}/user_logout.action">注销登陆</a></li>
+		</c:if>
+	</ul>
+
 </body>
 </html>

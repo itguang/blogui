@@ -13,12 +13,14 @@
 		
 		<property name="title" column="title"></property>
 		<property name="author" column="author"></property>
-		<property name="time" column="time"></property>
+		<property name="time" column="time" type="timestamp"></property>
 		<property name="star" column="star"></property>
 		<property name="visit" column="visit"></property>
-		<property name="content" column="content"></property>
+		<property name="content" column="content" type="text"></property>
 		<property name="tag" column="tag"></property>
 		<property name="recomment" column="recomment"></property>
+		
+		
 
 	</class>
 
