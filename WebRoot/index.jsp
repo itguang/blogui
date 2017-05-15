@@ -134,7 +134,7 @@
 			<div class="col-md-12 column">
 				<div class="jumbotron well">
 					<h2>
-						<a href="article.html" target="_blank"
+						<a href="article.jsp" target="_blank"
 							style="text-decoration: none;">helloworld</a>
 
 					</h2>

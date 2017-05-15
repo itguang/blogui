@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop.xsd
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx.xsd">
+	
+	
+	
+
+	<!-- 创建dao对象 -->
+	<bean id="articleDao" class="cn.itguang.dao.ArticleDaoImpl">
+	
+	<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+
+	<!-- 创建service对象 -->
+	<bean id="articleService" class="cn.itguang.service.ArticleServlceImpl">
+		<!-- 注入dao -->
+		<property name="articleDao" ref="articleDao"></property>
+	</bean>
+	<!-- 配置action的对象 注意action对象scope为多实例 -->
+	<bean id="articleAction" class="cn.itguang.action.UserAction" scope="prototype">
+		<!-- 由于action中需要service参数,故需要注入service,注入之前先创建它们的对象 -->
+		<property name="articleService" ref="articleService"></property>
+	</bean>
+	<!-- 创建hibernateTemplate对象 -->
+	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate5.HibernateTemplate">
+		<!-- 注入sessionFactory -->
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+</beans>
+
+
+
+
+
+
+
+
+
+

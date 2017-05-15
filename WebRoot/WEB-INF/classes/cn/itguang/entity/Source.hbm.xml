@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<!-- 1 配置类和表对应 class标签 name属性：实体类全路径 table属性：数据库表名称 -->
+
+	<class name="cn.itguang.entity.Source" table="source">
+		<id name="sid" column="sid">
+			<generator class="native"></generator>
+		</id>
+		
+		
+		<property name="title" column="title"></property>
+		<property name="author" column="author"></property>
+		<property name="time" column="time"></property>
+		<property name="visit" column="visit"></property>
+		<property name="content" column="content"></property>
+		<property name="link" column="link"></property>
+		<property name="tag" column="tag"></property>
+		<property name="password" column="password"></property>
+		<property name="recomment" column="recomment"></property>
+
+	</class>
+
+</hibernate-mapping>
+
+
+
+
+
