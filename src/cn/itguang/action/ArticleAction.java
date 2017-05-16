@@ -1,11 +1,15 @@
 package cn.itguang.action;
 
-import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.apache.struts2.ServletActionContext;
 
 import cn.itguang.entity.Article;
 import cn.itguang.service.ArticleService;
+import cn.itguang.utils.MyArticleUtil;
+import cn.itguang.utils.MyDataUtil;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
@@ -13,10 +17,10 @@ import com.opensymphony.xwork2.ModelDriven;
 public class ArticleAction extends ActionSupport implements
 		ModelDriven<Article> {
 
-	private ArticleService articleServlce;
+	private ArticleService articleService;
 
-	public void setArticleServlce(ArticleService articleServlce) {
-		this.articleServlce = articleServlce;
+	public void setArticleService(ArticleService articleService) {
+		this.articleService = articleService;
 	}
 
 	private Article article = new Article();
@@ -27,20 +31,50 @@ public class ArticleAction extends ActionSupport implements
 		return article;
 	}
 	
+	// 查看文章
+		@SuppressWarnings("all")
+		public String read(){
+			
+			
+			Article read = articleService.findArticleById(article.getAid());
+			
+			ServletActionContext.getRequest().setAttribute("article", read);
+			
+			
+			
+			return "read";
 
-	//发表文章成功
+		}
+	
+	
+
+	// 发表文章成功
 	@SuppressWarnings("all")
-	public String add(){
-		
-		
-		
+	public String add() throws IOException {
+		System.out.println(article.toString());
+
+		MyArticleUtil.setArticle(article);
+
+		// 调用service进行保存
+
+		int aid = articleService.add(article);
+
+		if (aid != -1) {
+
+			// 保存成功后,设置响应信息
+//			MyDataUtil.setResponseData("成功啦,哈哈,"+aid);
+			Map map = new HashMap<String, String>();
+			
+			map.put("aid", aid);
+			map.put("time", "2017-5-15");
+			map.put("use", "500"+"毫秒");
+			
+			ServletActionContext.getRequest().setAttribute("map", map);
+			
+		}
+
 		return "addsuccess";
+
 	}
-	
-	
-	
-	
-	
-	
 
 }

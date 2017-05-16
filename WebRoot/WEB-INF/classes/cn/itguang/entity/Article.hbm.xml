@@ -13,12 +13,16 @@
 		
 		<property name="title" column="title"></property>
 		<property name="author" column="author"></property>
-		<property name="time" column="time" type="timestamp"></property>
+		<property name="time" column="time" ></property>
 		<property name="star" column="star"></property>
 		<property name="visit" column="visit"></property>
 		<property name="content" column="content" type="text"></property>
+		<property name="outline" column="outline" type="text"></property>
 		<property name="tag" column="tag"></property>
 		<property name="recomment" column="recomment"></property>
+		
+		<!-- 外键(多对一)该文章所属用户-->
+		<many-to-one name="user" class="cn.itguang.entity.User" column="uaid"></many-to-one>
 		
 		
 

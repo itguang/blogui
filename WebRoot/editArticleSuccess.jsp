@@ -53,6 +53,11 @@
 </style>
 
 <script>
+	$(document).ready(function() {
+
+		$("#modal-699765").click();
+
+	});
 	function submit() {
 		$.ajax({
 			cache : true,
@@ -64,12 +69,6 @@
 				alert("Connection error:" + request.error); //发表失败
 			},
 			success : function(data) { //发表成功
-				var mydata = data.split(",");
-
-				$("#my_time").text(mydata[0]);
-				$("#my_use_time").text(mydata[1]);
-				$("#my_link").attr("href",
-						"article_read.action?aid=" + mydata[2]);
 
 			}
 		});
@@ -83,37 +82,7 @@
 
 <body>
 
-	<form id="myform"
-		action="${pageContext.request.contextPath}/article_add.action"
-		method="post">
 
-		<div id="titleStyle">
-			<input id="title" name="title" type="text" value="#文章标题#"><br>
-		</div>
-		<div>
-			<a href="mk/simples/editormd.jsp" style="color:blue;text-font:30px"><span>切换到markdown编辑器</span></a>
-		</div>
-		<textarea cols="80" id="editor1" name="content" rows="10">
-	</textarea>
-		<table>
-			<tr>
-				<td>简介:</td>
-				<td><textarea name="outline" id="outline" style="">请输入文章概要,帮助别人快速了解,250字左右即可...</textarea>
-				</td>
-				<td><span style="color:red"></span></td>
-			</tr>
-			<tr>
-				<td>分类:</td>
-				<td><input id="" name="tag" type="text" value=""
-					style="height:30px;width:300px" easyform="email;real-time;">
-				</td>
-			</tr>
-		</table>
-<br>
-<input type="submit" class="btn btn-default" value="发表文章">
-
-
-	</form>
 
 
 
@@ -140,18 +109,19 @@
 											<button type="button" class="close" data-dismiss="alert"
 												aria-hidden="true"></button>
 											<h4>本次发表:</h4>
-											<strong>时间:</strong> <span id="my_time"></span> <br>
+											<strong>时间:</strong> ${map.time} <br>
 											</h4>
-											<strong>用时:</strong> <span id="my_use_time"></span>
+											<strong>用时:</strong> ${map.use}
 										</div>
 									</div>
 								</div>
 							</div>
 							<div class="modal-footer">
-								<button type="button" class="btn btn-default"
-									data-dismiss="modal"
-									onclick="window.location.reload('editArticle.jsp')">继续写文章</button>
-								<a id="my_link" class="btn btn-primary" href="">查看文章</a>
+							<a id="my_link" class="btn btn-primary"
+									href="editArticle.jsp">继续写文章</a>
+								
+								<a id="my_link" class="btn btn-primary"
+									href="article_read.action?aid=${map.aid}">查看文章</a>
 							</div>
 						</div>
 

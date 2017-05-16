@@ -14,6 +14,13 @@
 			<result name="logoutsuccess">/index.jsp</result>
 		</action>
 		
+		<!-- 用户发表文章 -->
+		<action name="article_*" class="articleAction" method="{1}">
+		    <result name="read">/article.jsp</result>
+		    <result name="addsuccess">/editArticleSuccess.jsp</result>
+		
+		</action>
+		
 		
 		
 		

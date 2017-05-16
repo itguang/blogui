@@ -3,6 +3,7 @@ package cn.itguang.service;
 import org.springframework.transaction.annotation.Transactional;
 
 import cn.itguang.dao.ArticleDao;
+import cn.itguang.entity.Article;
 @Transactional
 public class ArticleServlceImpl implements ArticleService {
 	private ArticleDao articleDao;
@@ -12,8 +13,14 @@ public class ArticleServlceImpl implements ArticleService {
 	}
 
 	@Override
-	public void findArticleById(String id) {
-		// TODO Auto-generated method stub
+	public Article findArticleById(Integer id) {
+		return articleDao.findArticleById(id);
+		
+	}
+
+	@Override
+	public int add(Article article) {
+		return articleDao.add(article);
 		
 	}
 	

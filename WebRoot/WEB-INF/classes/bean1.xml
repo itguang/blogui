@@ -41,6 +41,7 @@
 	<!-- 引入其他spring配置文件 -->
 	<import resource="classpath:user.xml"/>
 	<import resource="classpath:article.xml"/>
+	<import resource="classpath:source.xml"/>
 	
 </beans>
 

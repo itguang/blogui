@@ -1,6 +1,7 @@
 package cn.itguang.entity;
 
 import java.util.HashSet;
+import java.util.Set;
 
 public class User {
 
@@ -12,10 +13,31 @@ public class User {
 	private String sex;
 	private String motto;
 	
+	private Set<Article> setArticle = new HashSet<Article>();
+	private Set<Source> setSource = new HashSet<Source>();
+	
+	
+	
 	
 
-	
 
+
+
+	public Set<Source> getSetSource() {
+		return setSource;
+	}
+
+	public void setSetSource(Set<Source> setSource) {
+		this.setSource = setSource;
+	}
+
+	public Set<Article> getSetArticle() {
+		return setArticle;
+	}
+
+	public void setSetArticle(Set<Article> setArticle) {
+		this.setArticle = setArticle;
+	}
 
 	public Integer getUid() {
 		return uid;

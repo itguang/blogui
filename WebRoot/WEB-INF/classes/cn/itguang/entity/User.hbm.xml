@@ -17,7 +17,16 @@
 		<property name="motto" column="motto"></property>
 
          
-		
+		<!-- 外键(一对多)表示该用户所有文章 -->
+		<set name="setSource" inverse="true" cascade="delete">
+			<key column="usid"></key>
+			<one-to-many class="cn.itguang.entity.Source"/>
+		</set>
+		<!-- 外键(一对多)表示该用户所有文章 -->
+		<set name="setArticle" inverse="true" cascade="delete">
+			<key column="uaid"></key>
+			<one-to-many class="cn.itguang.entity.Article"/>
+		</set>
 		
 		
 

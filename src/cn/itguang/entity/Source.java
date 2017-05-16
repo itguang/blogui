@@ -1,51 +1,51 @@
 package cn.itguang.entity;
 
+import java.sql.Timestamp;
+import java.util.Date;
 
-import java.sql.Date;
+public class Source {
 
-
-public class Article {
-	private Integer aid;
+	private Integer sid;
 	private String title;
 	private String author;
-	private Date time;
-	private Integer star;
+	private Timestamp time;
 	private Integer visit;
 	private String content;
 	private String outline;
+	private String link;
+	private String password;
 	private String tag;
-	private Integer recomment;
-	
+
 	private User user;
-	
-
-	
-	
-
-	public String getOutline() {
-		return outline;
-	}
-
-	public void setOutline(String outline) {
-		this.outline = outline;
-	}
 
 	public User getUser() {
 		return user;
 	}
 
+	
+	
+	public String getOutline() {
+		return outline;
+	}
+
+
+
+	public void setOutline(String outline) {
+		this.outline = outline;
+	}
+
+
+
 	public void setUser(User user) {
 		this.user = user;
 	}
 
-	
-
-	public Integer getAid() {
-		return aid;
+	public Integer getSid() {
+		return sid;
 	}
 
-	public void setAid(Integer aid) {
-		this.aid = aid;
+	public void setSid(Integer sid) {
+		this.sid = sid;
 	}
 
 	public String getTitle() {
@@ -64,28 +64,12 @@ public class Article {
 		this.author = author;
 	}
 
-	
-
-	
-
-
-
-	
-
 	public Date getTime() {
 		return time;
 	}
 
-	public void setTime(Date time) {
+	public void setTime(Timestamp time) {
 		this.time = time;
-	}
-
-	public Integer getStar() {
-		return star;
-	}
-
-	public void setStar(Integer star) {
-		this.star = star;
 	}
 
 	public Integer getVisit() {
@@ -104,6 +88,22 @@ public class Article {
 		this.content = content;
 	}
 
+	public String getLink() {
+		return link;
+	}
+
+	public void setLink(String link) {
+		this.link = link;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
 	public String getTag() {
 		return tag;
 	}
@@ -112,28 +112,16 @@ public class Article {
 		this.tag = tag;
 	}
 
-	public Integer getRecomment() {
-		return recomment;
-	}
 
-	public void setRecomment(Integer recomment) {
-		this.recomment = recomment;
-	}
 
 	@Override
 	public String toString() {
-		return "Article [aid=" + aid + ", title=" + title + ", author="
-				+ author + ", time=" + time + ", star=" + star + ", visit="
-				+ visit + ", content=" + content + ", outline=" + outline
-				+ ", tag=" + tag + ", recomment=" + recomment + "]";
+		return "Source [sid=" + sid + ", title=" + title + ", author=" + author
+				+ ", time=" + time + ", visit=" + visit + ", content="
+				+ content + ", outline=" + outline + ", link=" + link
+				+ ", password=" + password + ", tag=" + tag + ", user=" + user
+				+ "]";
 	}
-
-	
-
-	
-	
-
-	
 
 	
 
