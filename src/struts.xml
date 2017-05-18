@@ -18,7 +18,9 @@
 		<action name="article_*" class="articleAction" method="{1}">
 		    <result name="read">/article.jsp</result>
 		    <result name="addsuccess">/editArticleSuccess.jsp</result>
-		
+		    <result name="list">/index_blog.jsp</result>
+		    <result name="indexlist">/index.jsp</result>
+		  
 		</action>
 		
 		

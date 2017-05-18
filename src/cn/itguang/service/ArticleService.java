@@ -1,7 +1,7 @@
 package cn.itguang.service;
 
 import cn.itguang.entity.Article;
-import cn.itguang.entity.User;
+import cn.itguang.utils.Page;
 
 public interface ArticleService {
 
@@ -9,5 +9,11 @@ public interface ArticleService {
 			id);
 
 	int add(Article article);
+	
+	
+	
+	
+	
+	Page findPageRecords(String pagenum);
 	
 }

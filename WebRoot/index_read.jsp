@@ -51,7 +51,7 @@
          <a href="index.jsp"><span class="badge pull-right">42</span> 首页</a>
        </li>
        <li class="">
-         <a href="index_blog.jsp">我的博客</a>
+         <a href="${pageContext.request.contextPath}/article_list.action">我的博客</a>
        </li>
        <li >
          <a href="index_itsource.jsp">资源分享</a>
